@@ -1,0 +1,70 @@
+body{
+    /*background: #35586C */
+}
+
+a:link {
+    color:#414958;
+}
+a:visited {
+    color: #4E5869;
+}
+
+
+#header , #footer {
+	background: #6F7D94;
+}
+
+#navP{
+	background: #35586C;
+    color:#c0c0ff;
+}
+
+#navP a{
+    color:white;
+    text-decoration: none;
+}
+
+#navP a:hover{
+    color:white;
+    text-decoration: underline;
+}
+
+#sidebar, #sidebarP, #lastVis {
+    float: left;
+    background: #B7C3D0;
+}
+
+#footer a:visited{
+    color:#000;
+}
+
+#footer a:link{
+    color:#343434;
+}
+
+#footer a:hover{
+    color:#FFF;
+}
+
+#header a:visited{
+    color:#c0c0ff;
+}
+
+#header a:hover{
+    color:#FFF;
+    text-decoration: underline;
+}
+
+#header a:link{
+    color:#000;
+
+}
+
+ul#nav a, ul#nav a:visited {
+    background: #8090AB;
+    color: #000;
+}
+ul#nav a:hover, ul#nav a:active, ul#nav a:focus {
+    background: #6F7D94;
+    color: #FFF;
+}

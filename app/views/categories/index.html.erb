@@ -1,0 +1,19 @@
+<h1>Listing categories</h1>
+
+<br />
+
+<%= link_to image_tag("new.png", :width => "50px", :height => "50px"), new_category_path %> |
+<%= link_to image_tag("back.png", :width => "25px", :height => "25px"),'/' %>
+<br />
+
+<table>
+  <thead>
+  <th>Name</th>
+  </thead>
+
+  <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category%></td>
+      </tr>
+  <% end %>
+</table>

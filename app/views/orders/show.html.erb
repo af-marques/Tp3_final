@@ -1,0 +1,63 @@
+
+<div id=sidebar>
+  <div id="categories">
+    <ul id="nav">
+      <% @categories = Category.all %>
+      <% @categories.each do |category| %>
+          <li>
+            <% name = category.name %>
+            <%= link_to name, category %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="lastVis">
+    <p>Last visited:</p>
+    <% if cookies[:last_product].nil? %>
+        <p> No last visited!</p>
+    <% else %>
+        <%= link_to image_tag(Product.find(cookies[:last_product]).image_url,:width =>"100px",:height =>"100px", :alt=>"no_image.jpg"), Product.find(cookies[:last_product]) %>
+        <p><%= Product.find(cookies[:last_product]).name %></p>
+        <p><%= Product.find(cookies[:last_product]).price.to_f %> €</p>
+    <%end%>
+  </div>
+</div>
+<div id=content>
+<p id="notice"><%= notice %></p>
+
+<h2>Your Order</h2>
+
+<%= link_to image_tag("back.png", :width => "25px", :height => "25px"), root_path %>
+
+
+<table>
+  <tr>
+    <td>Product Name</td>
+    <td>Unity Price</td>
+    <td>Quantity</td>
+    <td>Total Price</td>
+  </tr>
+
+  <% @order.line_items.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= item.product.price.to_f %> €</td>
+        <td><%= item.quantity %></td>
+        <td><%= item.line_item_total_price.to_f %> €</td>
+      </tr>
+  <% end %>
+  <tr>
+  </tr>
+
+  <tr>
+    <td colspan="3"> Total: </td>
+    <td> <%=@order.total_price.to_f%> €</td>
+  </tr>
+</table>
+
+
+<br/>
+
+
+<td><%= button_to 'Finish Order', :action => 'conclude' , :id => @order.id , data:{ confirm: 'Are you sure?' }   %></td>
+</div>

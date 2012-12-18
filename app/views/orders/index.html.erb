@@ -1,0 +1,31 @@
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Conclusion Date</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.user_id %></td>
+    <td><%= order.conclusion %></td>
+    <td><%= button_to 'Finish Order', :action => 'conclude' , :id => order.id , data:{ confirm: 'Are you sure?' }   %></td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to image_tag("edit.png", :width => "25px", :height => "25px"), edit_order_path(order) %></td>
+    <td><%= link_to image_tag("delete.png", :width => "25px", :height => "25px"), order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("back.png", :width => "25px", :height => "25px"),'/' %>
+
+<%= link_to 'Back','/' %>

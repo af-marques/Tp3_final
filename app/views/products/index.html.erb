@@ -1,0 +1,53 @@
+<div id=sidebar>
+  <div id="categories">
+    <ul id="nav">
+      <% @categories = Category.all %>
+      <% @categories.each do |category| %>
+          <li>
+            <% name = category.name %>
+            <%= link_to name, category %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="lastVis">
+    <p>Last visited:</p>
+    <% if cookies[:last_product].nil? %>
+        <p> No last visited!</p>
+    <% else %>
+        <%= link_to image_tag(Product.find(cookies[:last_product]).image_url,:width =>"100px",:height =>"100px", :alt=>"no_image.jpg"), Product.find(cookies[:last_product]) %>
+        <p><%= Product.find(cookies[:last_product]).name %></p>
+        <p><%= Product.find(cookies[:last_product]).price.to_f %> €</p>
+    <%end%>
+  </div>
+</div>
+<div id=content>
+<h1>All products</h1>
+
+<%= link_to 'Order by Name', :sort => "name" %>
+<br/>
+<%= link_to 'Order by Price', :sort => "price" %>
+<br/>
+<br />
+<%= link_to image_tag("back.png", :width => "25px", :height => "25px"),'/' %>
+<br/>
+
+<table id="productos">
+  <thead>
+  <th>Image url</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Price</th>
+  </thead>
+
+  <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to image_tag(product.image_url, :height => "60%", :width => "60%", :alt=>"no_image.jpg" ), product%></td>
+        <td><%= product.name%></td>
+        <td class="Descript"><%= truncate(strip_tags(product.description), :length => 80) %></td>
+        <td class="Preco" ><%= product.price.to_f %> €</td>
+        <td><%= button_to 'Add to Cart', line_items_path(:product_id => product) %></td>
+      </tr>
+  <% end %>
+</table>
+</div>

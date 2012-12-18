@@ -1,0 +1,248 @@
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: url("grey_blue.jpg");
+}
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+#container {
+    width: 80%;
+    max-width: 1280px;
+    min-width: 780px;
+    margin: 0 auto;
+}
+
+#header {
+    padding: 10px;
+    height:80px;
+    font-size: 20px;
+    text-align:center;
+    display: block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+    display: block;
+}
+
+div.search {
+    padding: 25px 5px 2px 5px;
+    float: right;
+    font-size:12px;
+}
+
+#desImg, #buttonsDes{
+    text-align:center;
+    display: block;
+    text-decoration: none;
+    clear: both;
+    padding:10px;
+}
+
+#productos{
+    overflow: hidden;
+}
+
+#logo{
+    float:left;
+    font-size:14px;
+    vertical-align: middle;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
+#car{
+    float:right;
+    font-size:14px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+#home{
+    float:right;
+    font-size:14px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+#footer {
+    padding: 10px 0;
+    position: relative;
+    clear: both;
+    height:30px;
+
+}
+
+#register{
+    text-align: left;
+    float: left;
+    vertical-align: middle;
+}
+
+#register a:hover{
+    text-decoration: underline;
+}
+
+.w3c{
+    float:right;
+}
+
+#theme{
+    float:right;
+    margin-right: 20px;
+}
+
+ul#nav {
+    list-style: none;
+    border-top: 1px solid #666;
+    margin-bottom: 15px;
+}
+ul#nav li {
+    border-bottom: 1px solid #666;
+}
+ul#nav a, ul#nav a:visited {
+    padding: 10px 5px 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.image{
+    width:20px;
+    height:20px;
+}
+
+
+#lastVis{
+    clear: both;
+	width: 95%;
+    height: 420px;
+    text-align:center;
+    margin-left: 10px;
+}
+
+
+#content {
+    padding: 5px;
+    margin-left: 20px;
+    width: 76%;
+    float: left;
+    height: 660px;
+    overflow: auto;
+    background: #B7C3D0;
+}
+
+#destaqueIndex{
+    margin: 10px;
+    padding: 10px;
+    height: 400px;
+    text-align:center;
+}
+
+#destaqueCat{
+    height: 400px;
+    padding: 10px;
+    display:none;
+    text-align: center;
+}
+
+#categoria{
+    border-color:black;
+    border-style: solid ;
+    border-width: 1px ;
+    margin: 10px;
+}
+
+a#backwards{
+    float:left;
+}
+
+a#forward{
+    float:right;
+}
+
+table{
+    margin:auto;
+}
+
+td{
+    width: 200px;
+}
+
+tr,td{
+    text-align: center;
+
+}
+
+td img{
+    width:150px;
+    height:150px;
+}
+
+td p{
+    font-size: 60%;
+}
+
+#home{
+    display:none;
+}
+
+#allProCat,#allSearch{
+    text-align: justify;
+    font-size: 75%;
+    margin-top: 10px;
+    border: 1px solid black;
+}
+
+#allProCat img, #allSearch img{
+    width: 50%;
+    height: 50%;
+}
+
+#allProCat tr,#allSearch tr{
+    display: block;
+}
+
+#allProCat td, #allSearch td{
+    width: 300px;
+}
+
+#allProCat tbody, #allSearch tbody{
+    display: block;
+    height: 350px;
+    overflow: auto;
+    border: 1px solid black;
+    width: 100%;
+}
+
+#tableArea {
+    overflow: hidden;
+    height: 450px;
+}
+
+#allSearch tbody{
+    height: 600px;
+}
+
+.Descript{
+    max-width:60px;
+}

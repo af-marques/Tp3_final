@@ -1,0 +1,2 @@
+module InipageHelper
+end

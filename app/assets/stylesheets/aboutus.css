@@ -1,0 +1,107 @@
+body{
+	background-color: black;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:12px;
+	color: RGB(144,144,144)
+}
+
+.name{
+	font-size:210%
+}
+
+.cabecalho{
+	color: RGB(255,255,255); 
+	text-align: center ;
+}
+
+.deflist{
+	color: RGB(0,255,255);
+	font-size: 120% ;
+	border-width:  2px 0px 0px 0px;
+	border-color: RGB(255,255,255) ;
+	border-style: solid;
+	overflow:hidden;
+
+}
+
+.deflist:first-letter{
+	font-size: 18px
+}
+
+.defdescrip:first-Line{
+	color: RGB(255,255,255); 
+}
+
+.defdescrip{
+	margin-bottom:50px ;
+	
+}
+
+a:link{
+	color: RGB(125,125,255);
+	text-decoration: none;
+}
+
+a:visited{
+	color: #8080a0;
+}
+
+a:hover{
+	color: #c0c0ff;
+}
+
+#cabecalho{
+	background-color:  #303030;
+	padding: 10px ;
+	position: fixed ;
+	height: 120px;
+	top:0px;
+    padding-bottom: 25px;
+	right:8px;
+	left:8px ;
+	z-index:10;
+}
+
+#corpoUs{
+	background-color:  #606060 ;
+	padding: 20px ;
+    padding-top:30px;
+	position:relative;
+	top:120px;
+}
+
+#footerUS{
+	background-color:  #909090 ;
+	padding: 10px ;
+	margin: 0px	
+}
+
+hr{
+	border-width:3px;
+	border-style:none;
+	background-color: white
+}
+
+.hobbie{
+
+	float: right;
+	width: 100px ;
+	height: 100px ; 
+	margin: 10px 10px 10px 40px
+}
+
+#retrato{
+	position:absolute;
+	top: 10px;
+	right:10px;
+	height:80px;
+	width:80px;
+}
+
+#back{
+    position:absolute;
+    top: 10px;
+    left:10px;
+    height:80px;
+    width:80px;
+}

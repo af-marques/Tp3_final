@@ -1,0 +1,58 @@
+ <div id=sidebar>
+    <div id="categories">
+      <ul id="nav">
+        <% @categories = Category.all %>
+        <% @categories.each do |category| %>
+            <li>
+              <% name = category.name %>
+              <%= link_to name, category %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="lastVis">
+      <p>Last visited:</p>
+      <% if cookies[:last_product].nil? %>
+          <p> No last visited!</p>
+      <% else %>
+          <%= link_to image_tag(Product.find(cookies[:last_product]).image_url,:width =>"100px",:height =>"100px", :alt=>"no_image.jpg"), Product.find(cookies[:last_product]) %>
+          <p><%= Product.find(cookies[:last_product]).name %></p>
+          <p><%= Product.find(cookies[:last_product]).price.to_f %> €</p>
+      <%end%>
+    </div>
+  </div>
+  <div id=content>
+     <% product=rand(@products.length) %>
+    <p id="buttonsDes"> Produto em Destaque </p>
+    <div id="desImg">
+      <%= link_to image_tag(@products[product].image_url, :alt=>"no_image.jpg") , @products[product], :id=>"mainA" %>
+      <p><%= @products[product].name %></p>
+      <p><%= @products[product].price.to_f %> €</p>
+    </div>
+    <br/>
+    <table id="productos">
+      <tr>
+        <th>Image url</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+
+      </tr>
+
+      <%  @products.each do |product| %>
+      <tr>
+        <td> <%= link_to image_tag(product.image_url, :alt=>"no_image.jpg") , product %></td>
+        <td> <%= product.name %></td>
+        <td class="Descript"> <%= word_wrap(truncate(strip_tags(product.description), :length => 40),10) %></td>
+        <td> <%= product.price.to_f %> €</td>
+        <td><%= button_to 'Add to Cart', line_items_path(:product_id => product) %></td>
+        <!--  o user não precisa disto <td> %= product.category_id %></td> -->
+      </tr>
+      <% end %>
+    </table>
+   </div>
+
+<!--
+%= link_to 'Edit', edit_category_path(@category) %> |
+%= link_to 'Back', categories_path %>
+ -->
